@@ -5,7 +5,7 @@ import joblib
 
 # Load model pipeline object
 
-model = joblib.load("D:\\DSI\\data\\model_rf_pipeline.joblib")
+model = joblib.load("model.joblib")
 
 # Add title and instructions
 st.title("Purchase prediction Model")
@@ -47,5 +47,6 @@ if st.button("submit for prediction"):
     pred_proba = model.predict_proba(new_data)[0][1]
 
     # Output prediction
+
 
     st.subheader(f"Based on the customer data, our model predicts a purchase probability of {pred_proba:.0%}")
